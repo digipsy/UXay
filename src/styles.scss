@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'uxayTypo';
+    src: url('/assets/fonts/MonumentExtended-Regular.otf');
+}
+
+@font-face {
+    font-family: 'display';
+    src: url('/assets/fonts/MonumentExtended-Ultrabold.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'uxayTypo';
+    box-sizing: content-box;
+    line-height: 1.5;
+    color: #0505AF;
+}
+
+.wrpr {
+    width: calc(100% - 8%);
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 136px !important;
+    font-family: 'display';
+    margin: 0;
+}
+
+h2 {
+    font-size: 80px;
+    font-family: 'display';
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 50%;
+    line-height: 1;
+    text-transform: uppercase;
+    span {
+        font-family: 'display';
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,38 @@
+<div class="wrpr" id="htmlContent">
+    <div class="header">
+        <div class="fullName">Akshay Mistry</div>
+        <div class="logo">Portfolio&#64;25</div>
+        <div class="mainMenu">About</div>
+    </div>
+    <div class="heroFold">
+        <div class="heroText">
+            <h1 id="heading">
+                <span>Creative 🎨</span>    
+                <span>Front-end</span>
+                <span>👾 Developer</span>
+                <span>based in Pune,</span>
+                <span>🇮🇳 India</span>
+            </h1>
+        </div>
+    </div>
+    <section class="descSection">
+        <p>
+            I design high quality interafaces and build front-end. I have designed experiences for more than 30 applications during last 4 years. I have already worked with renowned clients such as: American Chemical Society, Prudential Insurance, WellHealth Canada, Arist, Gizmo...
+
+            I can help you build your next web application from scratch or enhance experiences on your existing products.
+        </p>
+    </section>
+    <section class="projectSection" *ngFor="let project of projects">
+        <div class="projectCard">
+            <div class="featuredImg">
+                <img src="{{project.image}}" alt="">
+            </div>
+            <h2>
+                <span>{{project.srNo}}</span>
+                {{project.name}}
+            </h2>
+        </div>
+    </section>
+</div>
+<!-- <div #rippleContainer class="ripple-container"></div> -->
+<canvas #canvasElement class="ripple-container" style="display: block; width: 100%; height: 100%;"></canvas>
