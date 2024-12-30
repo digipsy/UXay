@@ -46,3 +46,4 @@ Thumbs.db
 .gitignore
 .firebase/hosting.ZGlzdC91eGF5MjAyNQ.cache
 .firebase/hosting.ZGlzdC91eGF5MjAyNQ.cache
+*.cache
