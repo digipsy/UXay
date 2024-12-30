@@ -25,13 +25,13 @@
 }
 
 h1 {
-    font-size: 136px !important;
+    font-size: 9.0927vw;
     font-family: 'display';
     margin: 0;
 }
 
 h2 {
-    font-size: 80px;
+    font-size: 4.535vw;
     font-family: 'display';
     display: flex;
     align-items: flex-start;
@@ -42,6 +42,16 @@ h2 {
     text-transform: uppercase;
     span {
         font-family: 'display';
-        font-size: 2.5rem;
+        font-size: 2.268vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 9vw;
+    }
+
+    .header {
+        font-size: 14px !important;
     }
 }
