@@ -1,25 +1,29 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+import { environment } from '../../environment';
+import { getAnalytics, isSupported } from 'firebase/analytics';
+import { isPlatformBrowser } from '@angular/common';
 
-// Replace with your actual Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCN8-Din_zEKfHYlmeEl9h-21Fr5N7HX14",
-  authDomain: "uxay2025.firebaseapp.com",
-  projectId: "uxay2025",
-  storageBucket: "uxay2025.firebasestorage.app",
-  messagingSenderId: "291843150498",
-  appId: "1:291843150498:web:ff6fcd650583d9a39bfdfb",
-  measurementId: "G-W2WJNG1QZ5"
-};
+const firebaseConfig = environment.firebaseConfig;
 
 @Injectable({ providedIn: 'root' })
 export class FirebaseService {
   app: any;
   analytics: any;
 
-  constructor() {
-    this.app = initializeApp(firebaseConfig);
-    this.analytics = getAnalytics(this.app);
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.app = initializeApp(firebaseConfig);
+      isSupported()
+        .then((supported) => {
+          if (supported) {
+            this.analytics = getAnalytics(this.app);
+            console.log('Firebase Analytics initialized successfully.');
+          } else {
+            console.warn('Firebase Analytics is not supported in this environment.');
+          }
+        })
+        .catch((error) => console.error('Error checking analytics support:', error));
+    }
   }
 }
