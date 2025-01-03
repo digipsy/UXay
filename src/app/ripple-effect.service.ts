@@ -30,6 +30,7 @@ export class RippleEffectService implements OnDestroy {
     console.log('Initializing RippleEffectService');
 
     this.renderer = new THREE.WebGLRenderer({ canvas });
+    this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0x000000, 0);
     console.log('Renderer size set to:', window.innerWidth, window.innerHeight);
@@ -231,7 +232,10 @@ export class RippleEffectService implements OnDestroy {
   
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
+  
     this.renderer.setSize(width, height);
+    this.renderer.setPixelRatio(window.devicePixelRatio || 1);
+    console.log('Renderer or camera is initialized, resizing with new values', window.devicePixelRatio);
   }
   
   stop(): void {
