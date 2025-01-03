@@ -61,9 +61,10 @@
     margin: 2rem 0;
     position: relative;
     p {
-        width: 32%;
+        width: 48%;
         margin-right: 8%;
-        font-size: 1.361vw;
+        margin-bottom: 5rem;
+        font-size: clamp(1rem, 3.375vw, 2rem)
     }
 }
 
@@ -72,6 +73,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border: 2px solid #0505AF;
+    border-left: none;
+    border-right: none;
     .projectCard {
         position: relative;
         display: flex;
@@ -96,5 +100,30 @@
             right: 0%;
 
         }
+    }
+}
+
+.projectSection:last-child {
+    margin-bottom: 10rem;
+}
+
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 9vw;
+    }
+
+    .header {
+        font-size: 14px !important;
+    }
+
+    .heroFold {
+        justify-content: flex-start;
+        padding-top: 10rem;
+        height: auto;
+    }
+
+    .descSection p {
+        width: 100%;
     }
 }

@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "uxaydesigns-f4e77",
     "public": "dist/uxay2025/browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
